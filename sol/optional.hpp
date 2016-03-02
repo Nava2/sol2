@@ -25,7 +25,7 @@
 #if __cplusplus > 201402L
 #include <optional>
 #else
-#include "../Optional/optional.hpp"
+#include "Optional/optional.hpp"
 #endif // C++ 14
 
 namespace sol {
