@@ -59,3 +59,41 @@ docs/build/
 m.lua
 single/sol.hpp
 *.db
+
+# Sol2
+single/sol.hpp
+m.lua
+*.sublime-project
+docs/build/
+
+# Compiler outputs
+obj/*
+bin/*
+build*
+
+# Dropbox interference
+.dropbox*
+
+# QtCreator
+*.creator.user.*
+*.config
+*.creator
+*.files
+*.includes
+
+# Scratchpad Files
+main2.cpp
+main.cpp
+
+# Local Lua Testbeds
+lua-*/
+luajit-*/
+include/
+lib*
+lib/
+
+# Windows
+desktop.ini
+
+# OSX
+.DS_Store
