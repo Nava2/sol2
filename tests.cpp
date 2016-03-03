@@ -1507,3 +1507,11 @@ TEST_CASE("issues/stack-overflow", "make sure various operations repeated don't 
     }
     );
 }
+
+TEST_CASE("issues/luajit-throw", "Make sure accessing a nil global causes a sol::error to be caught")
+{
+    sol::state lua;
+    REQUIRE_THROWS_AS(lua.script("local M = require(\"M\")\n"
+                                 "assert(M.foo() == \"foo\")\n"),
+                      sol::error);
+}
