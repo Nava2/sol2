@@ -95,9 +95,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 # headers
 #########
-set(hfiles
-        sol/bond.hpp
-         
+set(hfiles 
         sol/compatibility.hpp
         sol/compatibility/5.0.0.h
         sol/compatibility/5.1.0.h
@@ -124,6 +122,8 @@ set(hfiles
         sol/function_types_usertype.hpp
         
         sol/inheritance.hpp
+        
+        sol/load_result.hpp
         
         sol/object.hpp
         
@@ -265,3 +265,4 @@ endif(SOL2_BUILD_TESTS)
 # Install: 
 install(FILES ${CMAKE_SOURCE_DIR}/sol.hpp DESTINATION include/)
 install(DIRECTORY ${CMAKE_SOURCE_DIR}/sol DESTINATION include/ REGEX ".+\\.(h(pp)?|inl)$")
+install(DIRECTORY ${CMAKE_BINARY_DIR}/include/Optional DESTINATION include/)
