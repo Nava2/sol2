@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include_directories(.)
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modules")
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modules" "${CMAKE_MODULE_PATH}")
 
 set(LUA_VERSION "5.3" CACHE STRING "The version of Lua needed (5.1, 5.2, 5.3)")
 if (LUA_VERSION MATCHES "5.1")
@@ -178,7 +178,7 @@ message(STATUS "${example_source_file}")
   get_filename_component(example_name ${example_source_file} NAME_WE)
   add_executable(${example_name} ${example_source_file} ${HEADER_SRCS})
   target_link_libraries(${example_name} ${LUA_LIBRARIES})
-  target_compile_features(${example_name} ${CXX_FEATURES})
+  target_compile_features(${example_name} PUBLIC ${CXX_FEATURES})
   install(TARGETS ${example_name} RUNTIME DESTINATION bin/examples)
 endforeach()
 
